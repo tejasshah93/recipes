@@ -15,7 +15,7 @@ Consumes the Contentful API for fetching recipes and displaying them using Ruby 
   - Description
   - Chef Name
 
-## Implement considerations
+## Implementation considerations
 - Contentful SDK for consuming API
   - Contentful Singleton client to avoid recreation of API client for each request
 - Error handler for handling custom errors
@@ -45,12 +45,12 @@ The project is a Ruby on Rails 5.0 app and the test framework is rspec-rails.
   bundle install
   ```
 - Set the following environment variables for consuming Contentful API
-  CONTENTFUL_ACCESS_TOKEN: Contentful access token (mandatory)
-  CONTENTFUL_SPACE_ID: Contentful space ID (mandatory)
-  CONTENTFUL_ENVIRONMENT_ID: Contentful environment ID (default: `master` in `[config.yml](config/initializers/config.yml)`)
+  - `CONTENTFUL_ACCESS_TOKEN`: Contentful access token (mandatory)
+  - `CONTENTFUL_SPACE_ID`: Contentful space ID (mandatory)
+  - `CONTENTFUL_ENVIRONMENT_ID`: Contentful environment ID (default value is `master` as configured in [`config.yml`](config/initializers/config.yml))
 - Start the rails server (default port: 3000 or run on custom port using `-p` flag).
   ```
-  CONTENTFUL_ACCESS_TOKEN=<access-token> bundle exec rails server
+  bundle exec rails server
   ```
 - Access the recipes server on http://localhost:3000
 
