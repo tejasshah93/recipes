@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-light">
+	  <a class="navbar-brand" href="<%= recipes_path %>">Home</a>	  
+	</nav>
+
+	<div class="container">
+		<% if flash[:error] %>
+			<div class="alert alert-danger"><%= flash[:error] %></div>
+		<% end %>
+		<% if flash[:success] %>
+			<div class="alert alert-success"><%= flash[:success] %></div>
+		<% end %>
+		<%= yield %>
+	</div>
+  </body>
+</html>

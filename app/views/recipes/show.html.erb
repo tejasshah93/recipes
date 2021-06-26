@@ -1,0 +1,33 @@
+<div class="card">
+  
+  <div class="card-block">
+    <h1 class="card-title">
+      <%= @recipe[:title] %>
+    </h1>    
+  </div>
+  <div class="card-block col-sm-12">
+    <%= image_tag @recipe[:image_url], class: 'img-fluid' %>
+  </div>
+  <div class="card-block">
+    <p class="card-text">
+      <span class="font-weight-bold">Description: </span>
+      <%= markdown(@recipe[:description]) %>
+    </p>
+    <% if @recipe[:chef_name]%>
+      <p class="card-text">
+        <span class="font-weight-bold">Chef: </span>
+        <%= @recipe[:chef_name] %>
+      </p>
+    <% end %>
+    <% if @recipe[:tags] %>
+      <p class="card-text">
+        <span class="font-weight-bold">Tags: </span>
+        <%= @recipe[:tags] %>
+      </p>
+    <% end %>
+  </div>
+    
+  <div class="card-footer">
+    <%= link_to 'Back', recipes_path, class: 'card-link btn btn-secondary' %>
+  </div>
+</div>
